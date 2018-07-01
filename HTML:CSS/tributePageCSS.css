@@ -1,0 +1,58 @@
+#title {
+	text-align: center;
+	
+}
+body{
+	background-color: lightgray;
+}
+#img-div {
+	background-color: white;
+	width:100%;
+	padding:0.5em;
+}
+#img {
+	width:98%;
+	padding:0.5em;
+	display:block;
+	
+}
+#img-caption{
+	display: block;
+	font-size: 21pt;
+	text-align: center;
+	width: 100%;
+}
+ul {
+	max-width: 800px;
+	margin: 0 auto;
+	text-align: left;
+}
+#headline{
+	max-width: 800px;
+	margin: 0 auto;
+	text-align: left;
+	padding-top: 2em;
+	padding-bottom: 1em; 
+}
+li{
+	padding:0.5em;
+}
+#quotation{
+	max-width: 800px;
+	margin: 0 auto;
+	text-align: center;
+
+}
+#more-info{
+	max-width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	padding-bottom: 1em;
+}
+#main{
+	margin: 30px auto;
+	padding: 15px;
+	border: 0px solid;
+	border-radius: 5px;
+	background: #eee;
+}

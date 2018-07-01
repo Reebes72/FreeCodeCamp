@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>CSS Technical Document</title>
+</head>
+<body>
+    <nav id="navbar">
+        <header><h1>CSS Documentation</h1></header>
+        <a href="#css:_cascasding_style_sheets" class="nav-link">Cascading Style Sheets</a>
+        <a href="#the_basics" class="nav-link">The Basics</a>
+        <a href="#values_and_units" class="nav-link">Values and Units</a>
+        <a href="#functions" class="nav-link">Functions</a>
+        <a href="#cascade-and-inheritance" class="nav-link">Cascade and Inheritance</a>
+    </nav>
+    <main id="main-doc" class="main-doc">
+        <section class="main-section">
+            <header id="css:_cascasding_style_sheets"><h2>CSS: Cascading Style Sheets</h2></header>
+                <p><strong>Cascasding Style Sheets (CSS)</strong> is a stylesheet language used to describe the presentation of a document writting in HTML or XML.
+                CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>
+                <hr>
+                <p>CSS is one of the core languages of the <strong>open web</strong> and is standardized across browsers
+                accord to the <a href="">W3C specification</a>. Developed in levels, CSS1 is now obsolete, CSS2.1 is a recommendation, and <a href="">CSS3</a>,
+            now split into smaller modules, is progressing on the standardization track.</p>
+            <hr>
+            <h3>Example of a CSS styling</h3>
+            
+            <code><pre class="code-style">
+    div p {
+     background-color: red;
+     background-style: none;
+     }
+                </pre>
+            </code>
+            <caption>Sets div and p element to have a background color of red and no styling.</caption>
+            
+        </section><hr>
+        <section class="main-section">
+            <header id="the_basics"><h2>The Basics</h2></header>
+            <p>In the last article we explained general CSS syntax and terminology in detail. To recap,
+                selectors are one part of a CSS rule and come just before CSS declaration blocks.
+            </p>
+            <code>
+                <pre class="code-style">
+    #first-line {
+    font-family: monospace;
+    text-align: center;
+    }
+                </pre>
+            </code>
+            <caption>"#first-line" is a selector. The <em>Declarations block</em> contains the two style statements</caption>
+            <h3>Different types of selectors</h3>
+            <p>Selectors can be divided into the following categories:</p>
+            <ul>
+            <li><strong>Simple selectors:</strong> Match one or more elements based on element type, class, or id.</li>
+            <li><strong>Attribute selectors:</strong> Match one or more elements based on their attributes/attribute values.</li>
+            <li><strong>Psuedo-classes:</strong> Match one or more elements that exist in a certain state, such as an elemnt that is being hovered over by the mouse 
+            pointer, or a checkbox that is currently disabled or checked, or an element that is the first child of its parent in the DOM tree</li>
+            <li><strong>Combinators:</strong> These are not exactly selectors themselves, but ways of combining two or more selectors in 
+            useful ways for very specific selections. So for example, you could select only paragraphs that are direct descendants of divs, or 
+        paragraphs that come directly after headings.</li>
+            <li><strong>Psuedo-elements:</strong> Match one or more parts of content that are in a certain position in relation to an element, for example the first word of each 
+            paragraph, or generated content appearing just before an element.</li>
+            <li><strong>Multiple selectors:</strong>Again, these are not separate selectors; the idea is that you can put multiple 
+            selectors on the same CSS rule, separated by commas, to apply a single set of declarations to all the elements selected 
+        by those selectors.</li>
+            </ul>
+        </section><hr>
+        <section class="main-section">
+            <header id="values_and_units"><h2>Value and Units</h2></header>
+            <p>There are many types of CSS property values to consider, from numerical values to colors to functions that perform a certain action 
+                (like embedding a background image, or rotating an element.) Some of these rely on particular units for specifying the exact values 
+                they are representing — do you want your box to be 30 pixels wide, or 30 centimeters, or 30 ems? In this guide, we look at more common 
+                values like length, color, and simple functions, as well as exploring less common units like degrees, and even unitless numerical values.</p>
+                <hr>
+                <p>There are many value types in CSS, some of them very common and some of them that you'll rarely come across. We won't cover all of them
+                     exhaustively in this article; just the ones that you are likely to find most useful as you continue on your path towards mastering CSS.
+                      In this article we will cover the following CSS values:</p>
+                      <ul>
+                          <li>Numeric values: Length values for specifying e.g. element width, border thickeness, 
+                              or font size, and unitless integers for specifying e.g. relative line width or number
+                              of times to run an animation.
+                          </li>
+                          <li>Percentages: Can also be used to specify size or length - relative to a parent container's 
+                            width or height for example, or the default font-size.</li>
+                          <li>Colors: For specifying background colors, text colors, etc.</li>
+                          <li>Coordinate positions: e.g. for specifying the position of a positioned element relative 
+                              to the top left of the screen.
+                          </li>
+                          <li>Functions: For specifying e.g. background images or background image gradients.</li>
+                      </ul>
+                      <p>You'll also see examples of such units in use all the way through the rest of the CSS topic,
+                          and just about every other CSS resource you see! You'll get used to it all in no time.
+                      </p>
+
+        </section><hr>
+        <section class="main-section">
+<header id="functions">
+    <h2>Functions</h2>
+</header>
+<p>In programming, a <u>function</u> is a reusable section of code that can be run multiple times to complete a repetitive 
+task with minimum effort on the part of both the developer and the ccomputer. Functions are usually associated with languages
+like JavaScript, Python, or C++, but they do exist in CSS too, as property values. We've already seen functions in action
+in the <a href="">Colors</a> sections, with <code>rgb()</code>, <code>hsl()</code>, etc.</p>
+<code>
+    <pre class="code-style">
+    background-color: rgba(255,0,0,0.5);
+    background-color: hsla(240,100%,50%,0.5);
+    </pre>
+</code>
+<p>These functions calculate what color to use.</p>
+<p>But you'll see functions in other places too - anytime you see a name with parenthesis after it, containing one or more values eparated by commas, you are dealing with a functions. For example:</p>
+<code>
+    <pre class="code-style">
+        /* calculate the new position of an element after it has been rotated by 45
+         degress */
+        transform: rotate(45deg);
+        /* calculate the new position of an element after it has been moved across
+        transform: translate(50px, 60px);
+        /* calculate the computed value of 90% of the current width minus 15px */
+        width: calc(90%-15px);
+        /* fetch an image from the network to be used as a background image */
+        background-image: url('myimage.png');
+    </pre>
+</code>
+<p>There are many exciting bits of functionality to use within CSS, which you'll learn about in due course!</p><hr>
+        </section>
+        <section class="main-section">
+            <header id="cascade-and-inheritance"><h2>Cascade and inheritance</h2></header>
+            <p>In a previous article, we got into the various CSS selectors. At some point in your work, you'll find
+                 yourself in the situation where multiple CSS rules will have selectors matching the same element. 
+                 In such cases, which CSS rule "wins", and ends up being the one that is finally applied to the element?
+                  This is controlled by a mechanism called the Cascade; this is also related to inheritance (elements 
+                  will take some property values from their parents, but not others). In this article we will define 
+                  what the CSS cascade is, what specificity is, what importance is, and how properties inherit from different rules.</p>
+                  <p>The final style for an element can be specified in many different places, which can interact in complex ways.
+                       This complex interaction makes CSS powerful, but it can also make it confusing and difficult to debug. 
+                       This article aims to clear up some of that complexity; if you don't understand it immediately, 
+                       don't worry — this is one of the hardest parts of CSS theory to comprehend. 
+                       You are advised to give it a try now, but then keep it nearby as a handy guide to return to when questions 
+                       about the cascade and inheritance come up.</p>
+                       <h3>The cascade</h3>
+                       <p>CSS is an acronym for Cascading Style Sheets, which indicates that the notion of the cascade is important. At its most basic level it indicates that the order of CSS rules matter, but it's more complex than that. What selectors win out in the cascade depends on three factors
+                            (these are listed in order of weight — earlier ones will overrule later ones):</p>
+                            <ol>
+                                <li>Importance</li>
+                                <li>Specificity</li>
+                                <li>Source order</li>
+                            </ol>
+                            <h3 class="invert">Importance</h3>
+                            <p>In CSS, there is a special piece of syntax you can use to make sure 
+                                that a certain declaration will <em>always</em> win over all others: <span class="gray-mono">!important</span>
+                            </p>
+                            <p>Let's look at an example:</p>
+                            <code><pre class="code-style">
+                                    <p class="better">This is a paragraph.</p>
+                                    <p class="better" id="winning">One selector to rule them all!</p>
+                                    
+                            </pre></code>
+                            <code>
+                                <pre class="codestyle">
+                                        #winning {
+                                            background-color: red;
+                                            border: 1px solid black;
+                                          }
+                                          
+                                          .better {
+                                            background-color: gray;
+                                            border: none !important;
+                                          }
+                                          
+                                          p {
+                                            background-color: blue;
+                                            color: white;
+                                            padding: 5px;
+                                          }        
+                                </pre>
+                            </code>
+                            <div class="code-result">
+                                <p class="better">This is a paragraph.</p>
+                                <p class="better" id="winning">One selector to rule them all!</p>
+                            </div>
+
+                            <p>Let's walk through this to see what's happening</p>
+                            <ol>
+                                <li>You'll see that the third rule's <code>color</code> and <code>padding</code>
+                                values has been applied, but the <code>background-color</code> hasn't. Why?
+                            Really all three should surely apply, because rules later in the source order generally
+                        override earlier rules.</li>
+                                <li>However, The rules above it win, because IDs/class selectors have higher
+                                     specificity than element selectors (you'll learn more about this in the next section).</li>
+                                <li>Both elements have a <code>class</code> of <span class="gray-mono">better</span>,
+                                but the 2nd one has an <code>id</code> of <span class="gray-mono">winning</span> too.
+                            Since IDs have an <em>even higher</em> specificity than classes (you can 
+                        only have one element with each unique ID on a page, but many elements with the same class -
+                    ID selectors are <em>very specific</em> in what they target), the red background color 
+                and the 1 pixel black border should both be applied to the 2nd element, with the first element
+            getting the gray background color, and no border, as specified by the class.</li>
+                                <li>The 2nd element <em>does</em> get the red background color, 
+                                but no border. Why? Because of the <span class="gray-mono">!important</span>
+                            declaration in the second rule - including this after <span class="gray-mono">border: none</span>
+                        means that this declaration will win over the border value in the previous rule,
+                    even though the ID has higher specificity.</li>
+
+                            </ol>
+                            <aside class="note">The only way to override this <span class="gray-mono">!important</span>
+                                declaration of the <em>same specificity</em> later in the source order, or one with a 
+                            higher specificity</aside>
+                            <p>It is useful to know that <span class="gray-mono">!important</span> exists so that you know
+                            what it is when you come across it in otyhert people's code. <strong>However</strong>,
+                        we strongly recommend that you never use it unless you absolutely have to. One situation in which you 
+                    may have to use it is when you are working on a CMS where you can't edit the core CSS 
+                modules, and you really want to ocerride a style that can't be overriden in any other way. 
+            But really, don't use it if you can avoid it, because <span class="gray-mono">!important</span>
+         changes the way the cascade normally works, so it can make debugging CSS problems really 
+        hard to work out, especially in a large stylesheet.</p>
+        <p>It is also useful to note that the importance of a CSS declaration depends on what stylesheet it is specified in - it is possible for users to set custom stylesheets to override the developer's styles, for example the user might be visually impaired, and want to set the font size on all web pages they visit to be double the normal size to allow for easier reading.</p>
+        <p>Conflicting decarations will be applied in the following order, with later ones oiverriding earlier ones:</p>
+        <ol>
+            <li>Declaration in user agent style sheets (e.g. the browser's default styles, used when no other styling is set).</li>
+            <li>Normal declarations in user style sheets (custome styles set by a user).</li>
+            <li>Normal declarations in author style sheets (these are the styles set by us, the web developers).</li>
+            <li>Important declarations in author style sheets</li>
+            <li>Important declarations in user style sheets</li>
+        </ol>
+                            <p>It makes sense for web developers' stylesheets to override user stylesheets, so the design can be kept as intended, but sometimes users have good reasons to override web developer styles, as mentioned above - this can be achieved by using <span class="gray-mono">!important</span> in their rules</p>
+                            <h3 class="invert">Specificity</h3>
+                            <p><strong>Specificity</strong> is basically a measure of how specific a selector is - how many elements it <em>could</em> match. As shown in the example seen above, element selectors have low specificity. Class selectors have a higher specificity, so will win against element selectors. ID selectors have an even higher specificity, so will win against class selectors. The only way to win against an ID selector is to use <span class="gray-mono">!important</span>.</p>
+                            <p>The amount of specificity a selector has is measured using four different values (or components), which can be thought of as thousands, hundreds, tens and ones - four single digits in four columns:</p>
+                            <ol>
+                                <li>Thousands: Score one in this column if the declaration is inside a <code>style</code> attribute (such declarations don't have selectors, so their specificity is always simple 1000.) Otherwise 0.</li>
+                                <li>Hundreds: Score one in this column for each ID selector contained inside the overall selector.</li>
+                                <li>Tens: Score one in this column for each class selector, attribute selector, or psuedo-class contained inside the overall selector.</li>
+                                <li>Ones: Score one in this column for each element selector or psuedo-element contained inside the overall selector.</li>
+                            </ol>
+<aside class="note">Universal selector(<code>*</code>), combinators (<code>+</code>, <code>></code>, <code>-</code>, ' ') and negation psuedo-class(<code>:not</code>) have no effect on specificity.</aside>
+<aside class="note">If multiple selectors have the same importance and specificity, which selector wins is decided by which comes later in the Source order.</aside>
+<p>Before we move on, let's look at an example in action. Here is the HTML we are going to use:</p>
+<pre><code>
+            <div id="outer" class="container">
+                    <div id="inner" class="container">
+                      <ul>
+                        <li class="nav"><a href="#">One</a></li>
+                        <li class="nav"><a href="#">Two</a></li>
+                      </ul>
+                    </div>
+                  </div>
+    
+</code></pre>
+<!--Going to have to do some research in to how this is rendered properly As of right now it is just displaying anchors rather than code.-->
+<p>And here is the CSS for the example:</p>
+<code>
+    <pre class="code-style">
+            /* specificity: 0101 */
+            #outer a {
+              background-color: red;
+            }
+            
+            /* specificity: 0201 */
+            #outer #inner a {
+              background-color: blue;
+            }
+            
+            /* specificity: 0104 */
+            #outer div ul li a {
+              color: yellow;
+            }
+            
+            /* specificity: 0113 */
+            #outer div ul .nav a {
+              color: white;
+            }
+            
+            /* specificity: 0024 */
+            div div li:nth-child(2) a:hover {
+              border: 10px solid black;
+            }
+            
+            /* specificity: 0023 */
+            div li:nth-child(2) a:hover {
+              border: 10px dashed black;
+            }
+            
+            /* specificity: 0033 */
+            div div .nav:nth-child(2) a:hover {
+              border: 10px double black;
+            }
+            
+            a {
+              display: inline-block;
+              line-height: 40px;
+              font-size: 20px;
+              text-decoration: none;
+              text-align: center;
+              width: 200px;
+              margin-bottom: 10px;
+            }
+            
+            ul {
+              padding: 0;
+            }
+            
+            li {
+              list-style-type: none;
+            }   
+    </pre>
+</code>
+    <p>The result we get from this is as follows:</p>
+    <div class="code-result">
+        <div id="outer" class="container">
+            <div id="inner" class="container">
+              <ul>
+                <li class="nav"><a href="#">One</a></li>
+                <li class="nav"><a href="#">Two</a></li>
+              </ul>
+            </div>
+          </div>
+    </div>
+    <p>So what's going on here? First of all, we are only interested in the first seven rules of this example, and as you'll notice, we have included their specificity values in a comment before each one.</p>
+    <ul>
+        <li>The first two selectors are competing over the styling of the link's background color — the second one wins and makes the background color blue because it has an extra ID selector in the chain: its specificity is 201 vs. 101.</li>
+        <li>The third and fourth selectors are competing over the styling of the link's text color — the second one wins and makes the text white because although it has one less element selector, the missing selector is swapped out for a class selector, which is worth ten rather than one. So the winning specificity is 113 vs. 104.</li>
+        <li>Selectors 5–7 are competing over the styling of the link's border when hovered. Selector six clearly loses to five with a specificity of 23 vs. 24 — it has one fewer element selectors in the chain. Selector seven, however, beats both five and six — it has the same number of sub-selectors in the chain as five, but an element has been swapped out for a class selector. So the winning specificity is 33 vs. 23 and 24.</li>
+    </ul>
+    <aside class="note"><strong>Note:</strong> If you haven't already, review selectors one more time, just to make sure you understand why the specificity values have been awared as shown.</aside>
+    <h3 class="invert">Source Order</h3> 
+    <p>As mentioned above, if multiple competing selectors have the same importance and specificity, the third factor that comes into play to help decide which rule wins is source order — later rules will win over earlier rules. For example:</p>
+    <code>
+        <pre class="code-style">
+            p {
+                color: blue;
+              }
+              
+              /* This rule will win over the first one */
+              p {
+                color: red;
+              }
+        </pre>
+    </code>   
+    <p>Whereas in this example the first rule wins because source order is overruled by specificity:</p>
+    <code>
+        <pre class="code-style">
+            /* This rule will win */
+            .footnote {
+              color: blue;
+            }
+            
+            p {
+              color: red;
+            } 
+        </pre>
+    </code>
+    <h3 class="invert">A note on rule mixing</h3>
+    <p>One thing you should bear in mind when considering all this cascade theory, and what styles get applied over other styles, is that all this happens at the property level — properties override other properties, but you don't get entire rules overriding other rules. When several CSS rules match the same element, they are all applied to that element. Only after that are any conflicting properties evaluated to see which individual styles will win over others.</p>
+    <p>Let's see an example. First, some HTML:</p>
+    <code>
+        <pre class="code-style">
+            <p>I'm <strong>important</strong></p>
+        </pre>
+    </code>
+    <p>And now some CSS to style it with:</p>
+    <code>
+        <pre class="code-style">
+            /* specificity: 0002 */
+            p strong {
+              background-color: khaki;
+              color: green;
+            }
+            
+            /* specificity: 0001 */
+            strong {
+              text-decoration: underline;
+              color: red;
+            }  
+        </pre>
+    </code>
+    <p>Result:</p>
+    <code>
+        <pre class="code-style">
+            <p id="decorate-underline-greentext-khakibg">I'm important</p>
+        </pre>
+    </code>
+    <p>In this example, because of its specificity, the first rule's <code>color</code> property overrides the color property of the second rule. However, both the <code>background-color</code> from the first rule and the <code>text-decoration</code> from the second rule are applied to the <code>strong</code> element. You'll also notice that the text of that element is bolded: this comes from the browsers' default stylesheet.</p>
+        </section>
+
+    </main>
+</body>
+</html>

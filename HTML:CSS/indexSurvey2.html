@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<style>
+
+
+body{
+	background-color: #a9d7d1;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
+    width: 80%;
+    background-color:white;
+    margin-left:10%;
+}
+
+.left {
+	grid-column: 1;
+	text-align: right;
+	padding: 0.5em;
+	
+}
+
+.right{
+	grid-column: 2;
+	padding: 0.5em;
+
+}
+.form-outer{
+	  background-color: #a9d7d1;
+  margin: 0 auto;
+  border-radius: 4px;
+  width: 75%;
+  max-width: 900px;
+  padding: 10px;
+  padding-top: 20px;}
+
+
+
+
+</style>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+	<div class="form-outer">
+		<p id="title">Survey Form</p>
+	</div>
+    <div class="wrapper">
+    
+    	<div class="left">
+    		<label id="name-label" >* Name</label>
+    	</div>
+    	<div class="right">
+    		    		<input type="text" name="name" id="name" required="required" placeholder="Enter your name" class="right">
+    	</div>
+    	
+    
+    </div>
+</body>
+
+</html>
